@@ -1,0 +1,98 @@
+# AWS + Microsoft Entra ID SAML SSO Lab
+
+## 📌 Overview
+
+This project demonstrates SAML-based Single Sign-On (SSO) between Microsoft Entra ID and AWS IAM with role-based access control.
+
+---
+
+## 🧠 Key Concepts
+
+* SAML 2.0 Federation
+* Role-Based Access Control (RBAC)
+* Least Privilege Enforcement
+* Identity Federation
+
+---
+
+## 🏗️ Architecture
+
+![Architecture](architecture/saml-flow-diagram.png)
+
+---
+
+## ⚙️ Implementation Steps
+
+### 1. Entra ID Configuration
+
+* Created Enterprise Application
+* Configured SAML SSO
+* Defined App Roles:
+
+  * AWS-Admin
+  * AWS-ReadOnly
+
+### 2. Claims Mapping
+
+* Role → user.assignedroles
+* RoleSessionName → user.userprincipalname
+
+### 3. AWS Configuration
+
+* Created SAML Identity Provider
+* Configured IAM Roles:
+
+  * AWS-Admin-SSO
+  * AWS-ReadOnly-SSO
+* Configured Trust Policy
+
+---
+
+## 🔐 Role Mapping Format
+
+```text
+arn:aws:iam::<ACCOUNT_ID>:role/<ROLE>,arn:aws:iam::<ACCOUNT_ID>:saml-provider/EntraID
+```
+
+---
+
+## 🚫 Validation (Least Privilege)
+
+Attempted to create S3 bucket with ReadOnly role:
+
+![Denied](screenshots/07-readonly-deny-s3.png)
+
+Result:
+AccessDenied: s3:CreateBucket permission is required
+
+---
+
+## 📸 Key Screenshots
+
+### Entra SAML Config
+
+![SAML](screenshots/01-entra-saml-config.png)
+
+### Claims Mapping
+
+![Claims](screenshots/02-entra-claims.png)
+
+### AWS Trust Policy
+
+![Trust](screenshots/05-aws-trust-policy.png)
+
+---
+
+## 🧩 Challenges
+
+* Incorrect SAML claim formatting caused authentication failures
+* Required precise ARN mapping for role assumption
+* Entra licensing limitation restricted multiple role assignments
+
+---
+
+## 🚀 Key Takeaways
+
+* Implemented federated identity using SAML
+* Enforced least privilege using AWS IAM
+* Validated access controls through denial testing
