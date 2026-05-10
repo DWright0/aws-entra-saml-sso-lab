@@ -181,3 +181,37 @@ AWS error page: "Your request did not include a SAML response"
 - AWS trust policy
 - Role assignment
 - Access denied validation
+
+---
+
+## Screenshots
+
+### Entra SAML Configuration
+![Entra SAML](screenshots/01-entra-saml-config.png)
+
+### Claims Mapping
+![Claims Mapping](screenshots/02-claims-mapping.png)
+
+### App Roles
+![App Roles](screenshots/03-app-roles.png)
+
+### User Assignment
+![User Assignment](screenshots/04-user-assignment.png)
+
+### AWS SAML Provider
+![AWS SAML Provider](screenshots/05-aws-saml-provider.png)
+
+### IAM Roles
+![IAM Roles](screenshots/06-iam-roles.png)
+
+### Trust Policy
+![Trust Policy](screenshots/07-trust-policy.png)
+
+### Read Only Policy
+![Read Only Policy](screenshots/08-read-only-policy.png)
+
+### AWS Federated Login
+![AWS Federated Login](screenshots/09-aws-federated-login.png)
+
+### Access Denied (Validation)
+![Access Denied](screenshots/10-access-denied.png)
