@@ -15,7 +15,9 @@ The focus of this lab includes:
 
 ## Architecture
 
-User → Entra ID → SAML Assertion → AWS IAM Role → AWS Console
+![SAML Architecture](screenshots/saml-architecture.png)
+
+End-to-end SAML federation flow between Microsoft Entra ID and AWS IAM demonstrating role-based access control and least privilege enforcement.
 
 ---
 
